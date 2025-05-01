@@ -56,6 +56,7 @@ namespace FractalGenerator
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.exitButton = new System.Windows.Forms.Button();
             this.startButton = new System.Windows.Forms.Button();
+            this.btnSaveImage = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.animationBox.SuspendLayout();
@@ -68,6 +69,7 @@ namespace FractalGenerator
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox1.Controls.Add(this.btnSaveImage);
             this.groupBox1.Controls.Add(this.angleBox);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.groupBox5);
@@ -88,7 +90,7 @@ namespace FractalGenerator
             this.groupBox1.Controls.Add(this.zoomLabel);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(248, 425);
+            this.groupBox1.Size = new System.Drawing.Size(248, 481);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Value";
@@ -306,7 +308,7 @@ namespace FractalGenerator
             this.groupBox2.Controls.Add(this.pictureBox);
             this.groupBox2.Location = new System.Drawing.Point(267, 13);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(521, 425);
+            this.groupBox2.Size = new System.Drawing.Size(561, 481);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Picture";
@@ -316,7 +318,7 @@ namespace FractalGenerator
             this.pictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox.Location = new System.Drawing.Point(3, 18);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(515, 404);
+            this.pictureBox.Size = new System.Drawing.Size(555, 460);
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             // 
@@ -326,16 +328,16 @@ namespace FractalGenerator
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.exitButton);
             this.groupBox3.Controls.Add(this.startButton);
-            this.groupBox3.Location = new System.Drawing.Point(13, 444);
+            this.groupBox3.Location = new System.Drawing.Point(13, 500);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(775, 43);
+            this.groupBox3.Size = new System.Drawing.Size(815, 43);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
             // exitButton
             // 
             this.exitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.exitButton.Location = new System.Drawing.Point(694, 14);
+            this.exitButton.Location = new System.Drawing.Point(734, 14);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(75, 23);
             this.exitButton.TabIndex = 1;
@@ -346,7 +348,7 @@ namespace FractalGenerator
             // startButton
             // 
             this.startButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.startButton.Location = new System.Drawing.Point(613, 14);
+            this.startButton.Location = new System.Drawing.Point(653, 14);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(75, 23);
             this.startButton.TabIndex = 0;
@@ -354,11 +356,23 @@ namespace FractalGenerator
             this.startButton.UseVisualStyleBackColor = true;
             this.startButton.Click += new System.EventHandler(this.StartBtn_Click);
             // 
+            // btnSaveImage
+            // 
+            this.btnSaveImage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveImage.Location = new System.Drawing.Point(9, 452);
+            this.btnSaveImage.Name = "btnSaveImage";
+            this.btnSaveImage.Size = new System.Drawing.Size(233, 23);
+            this.btnSaveImage.TabIndex = 18;
+            this.btnSaveImage.Text = "Save Image";
+            this.btnSaveImage.UseVisualStyleBackColor = true;
+            this.btnSaveImage.Click += new System.EventHandler(this.btnSaveImage_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 494);
+            this.ClientSize = new System.Drawing.Size(840, 550);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -406,6 +420,7 @@ namespace FractalGenerator
         private System.Windows.Forms.ComboBox fractalTypeComboBox;
         private System.Windows.Forms.TextBox angleBox;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnSaveImage;
     }
 }
 

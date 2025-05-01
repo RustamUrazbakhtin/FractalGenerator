@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -603,5 +604,41 @@ namespace FractalGenerator
             await GenerateFractalAsync();
         }
         #endregion
+
+        private void btnSaveImage_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "PNG Image|*.png|JPEG Image|*.jpg|Bitmap Image|*.bmp";
+                saveFileDialog.Title = "Save Fractal";
+                saveFileDialog.FileName = "fractal";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    if (pictureBox.Image != null)
+                    {
+                        ImageFormat format = ImageFormat.Png;
+
+                        switch (Path.GetExtension(saveFileDialog.FileName).ToLower())
+                        {
+                            case ".jpg":
+                                format = ImageFormat.Jpeg;
+                                break;
+                            case ".bmp":
+                                format = ImageFormat.Bmp;
+                                break;
+                        }
+
+                        pictureBox.Image.Save(saveFileDialog.FileName, format);
+                        MessageBox.Show("Image saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("There is no image to save..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+        }
+
     }
 }
